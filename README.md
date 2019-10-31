@@ -43,3 +43,12 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
+## Реализуйте сортировку пузырьком
+### Функция bubleSort должна быть чистой
+```javascript
+function bubleSort(arr) {}
+
+const arr = [5, 2, 7, 0, 3, 1];
+const sortedArr = bubleSort(arr);
+console.log(sortedArr) // [0, 1, 2, 3, 5, 7]
+```
