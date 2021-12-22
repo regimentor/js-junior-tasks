@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { WebsocketMockAdapter } from "./core/emmiter";
 
-import './App.css';
+import "./App.css";
 
-function App() {
+function App({ websocket }) {
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    const websocket = new WebsocketMockAdapter((data) => {
+      messages.push(data);
+      setMessages(messages);
+    }, 3000);
+  }, []);
+
+  const getUsers = () => console.log(websocket.getUsers());
+
   return (
     <div className="App">
-      <header className="App-header">
-
-      </header>
+      <span>JS Junior Task</span>
+      <button onClick={getUsers}>get users</button>
     </div>
   );
 }
