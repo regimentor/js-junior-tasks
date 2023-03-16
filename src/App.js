@@ -3,7 +3,7 @@ import { WebsocketMockAdapter } from "./core/emmiter";
 
 import "./App.css";
 
-function App({ websocket }) {
+function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
